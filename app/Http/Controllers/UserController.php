@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class UserController extends Controller
+{
+    function getUser(){
+        return "Ray McGates";
+    }
+
+    function aboutUser(){
+        return "Ray McGates is a Software Professional who speaks japanese and british English";
+    }
+
+    function getUserName($name){
+        return "Hello it is $name";
+    }
+
+    function ShowPricing($name){
+        return view('pricing',['name'=>$name]);
+    }
+
+    function adminLogin(){
+        return view('admin.login');
+    }
+
+    function userEscape(){
+        return view('out');
+    }
+}

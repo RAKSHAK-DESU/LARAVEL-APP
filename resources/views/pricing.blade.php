@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><h1>Pricing</h1></title>
+        <title>Pricing</title>
         <style>
             body{
                 background: rgb(77, 77, 77);
@@ -11,7 +11,7 @@
     </head>
     <body >
         <table border="1" frame="cols">
-            <caption>Pricing</caption>
+            <caption><h1> Pricing {{ $name }}</h1></caption>
             <thead>
                 <tr>
                     
