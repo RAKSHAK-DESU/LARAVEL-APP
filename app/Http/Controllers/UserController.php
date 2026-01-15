@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -28,5 +28,10 @@ class UserController extends Controller
 
     function userEscape(){
         return view('out');
+    }
+
+    function users1(){
+        $users= DB::select('select * from users');
+        return view('users',['users'=>$users]);
     }
 }

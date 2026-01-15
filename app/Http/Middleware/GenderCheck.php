@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class AgeCheck
+class GenderCheck
 {
     /**
      * Handle an incoming request.
@@ -14,10 +14,10 @@ class AgeCheck
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
-    {
-        if($request->age<18){
-            die("since you are underage You cannot access this website ");
-        };
+    {   
+        if($request->gender!='male'){
+            die('You Cannot Access this website');
+        }
         return $next($request);
     }
 }
