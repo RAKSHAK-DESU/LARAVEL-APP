@@ -60,3 +60,4 @@ Route::controller(StudentController::class)->group(function () {
 
 Route::get('users1',[UserController::class,'users1']);
 Route::get('students',[StudentController::class,'getStudent']);
+Route::get('uszzr',[UserController::class,'getUser1']);
