@@ -3,6 +3,9 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\EloquentUserController;
+use App\Http\Controllers\ChildrenController;
 use App\Http\Middleware\AgeCheck;
 use App\Http\Middleware\CountryCheck;
 use App\Http\Middleware\GenderCheck;
@@ -61,3 +64,7 @@ Route::controller(StudentController::class)->group(function () {
 Route::get('users1',[UserController::class,'users1']);
 Route::get('students',[StudentController::class,'getStudent']);
 Route::get('uszzr',[UserController::class,'getUser1']);
+
+Route::get('getusers',[UsersController::class,'queries']);
+Route::get('eloquentUser',[EloquentUserController::class,'queries']); 
+Route::get('children',[ChildrenController::class,'queries']);
