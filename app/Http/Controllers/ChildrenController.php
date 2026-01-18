@@ -12,4 +12,15 @@ class ChildrenController extends Controller
 
         return view('Children',['children'=>$response]);
     }
+
+    function any(){
+        return "this is any method";
+    }
+
+    function group1(){
+        return "This is Group 1";
+    }
+    function group2(){
+        return "This is Group 2";
+    }
 }

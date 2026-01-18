@@ -1,6 +1,17 @@
 <div>
     <h1>User Data</h1>
-    <table border="1">
+    <form action="children" method="post">
+        <input type="hidden" name="_methos" id="PUT">
+        <input type="text" name="user" placeholder="enter name">
+        @csrf
+        <br>
+        <br>
+        <input type="password" name="password" placeholder="enter password">
+        <br>
+        <br>
+        <button>Submit</button>
+    </form>
+    {{-- <table border="1">
         <tr>
             <td>Name</td>
             <td>Email</td>
@@ -15,6 +26,6 @@
             
         
         @endforeach
-    </table>
+    </table> --}}
     <!-- I begin to speak only when I am certain what I will say is not better left unsaid. - Cato the Younger -->
 </div>

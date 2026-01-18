@@ -6,6 +6,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\EloquentUserController;
 use App\Http\Controllers\ChildrenController;
+use App\Http\Controllers\HttpController;
+use App\Http\Controllers\SessionUserController;
+use App\Http\Controllers\UploadController;
+use App\Http\Controllers\FlashUserController;
 use App\Http\Middleware\AgeCheck;
 use App\Http\Middleware\CountryCheck;
 use App\Http\Middleware\GenderCheck;
@@ -67,4 +71,26 @@ Route::get('uszzr',[UserController::class,'getUser1']);
 
 Route::get('getusers',[UsersController::class,'queries']);
 Route::get('eloquentUser',[EloquentUserController::class,'queries']); 
-Route::get('children',[ChildrenController::class,'queries']);
+Route::get('children',[ChildrenController::class,'any']);
+Route::post('children',[ChildrenController::class,'any']);
+Route::put('children',[ChildrenController::class,'any']);
+Route::delete('children',[ChildrenController::class,'any']);
+
+Route::any('children',[ChildrenController::class,'any']);
+
+Route::match(['post','get'],'/children',[ChildrenController::class,'group1']);
+Route::match(['put','delete'],'/children',[ChildrenController::class,'group2']);
+
+Route::post('httpuser',[HttpController::class,'login']);
+Route::view('httpform','HttpUser');
+Route::view('sessionlogin','SessionLogin');
+Route::post('sessionlogin',[SessionUserController::class,'login']);
+
+Route::view('sessionprofile','sessionprofile');
+Route::get('sessionlogout',[SessionUserController::class,'logout']);
+
+Route::view('flashuser','FlashUser');
+Route::post('flashadd',[FlashUserController::class,'addUser']);
+
+Route::view('upload','upload');
+Route::post('upload',[UploadController::class,'upload']);
