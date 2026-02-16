@@ -15,6 +15,6 @@ class SessionUserController extends Controller
 
     function logout(){
         session()->pull('sessionuser');
-        return redirect('sessionprofile');
+        return redirect('sessionlogin');
     }
 }

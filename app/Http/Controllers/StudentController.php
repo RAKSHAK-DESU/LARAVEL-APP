@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -25,5 +25,27 @@ class StudentController extends Controller
         echo $data->testFun();
         $students=\App\Models\Student::all(); 
         return view('students',['data'=>$students]);
+    }
+ 
+    function addstu(Request $request){
+       $student= new Student();
+        $student->name=$request->name;
+        $student->email=$request->email;
+        $student->phone=$request->phone;
+        $student->save();
+        if($student){
+            echo "New student added";
+        }
+
+
+
+        return "add function called";
+    }
+
+    
+    function list(){
+        $studentData= Student::all();
+      //      return "student list";
+        return view('list-student',['students'=>$studentData]);
     }
 }

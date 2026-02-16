@@ -8,17 +8,18 @@ use App\Models\EloquestUser;
 class UsersController extends Controller
 {
     function queries(){
-       // $results = DB::table('users')->get();
+       $users= DB::table('users')->get();
        // $results= DB::table('users')->where('phone','1234')->get();
 
-       //$results = DB::table('users')->where('name','tony')->update(['phone'=>'2222']);
-        $results = DB::table('users')->where('name','tony')->delete();
+       //$results = DB::table('users')->where('name','prayag')->update(['phone'=>'2222']);
+        $results = DB::table('users')->insert(['name'=>'shinchan','email'=>'shin@test.com','phone'=>'']);
+        //$results = DB::table('users')->where('name','Mad')->delete();
 
        if($results){
-        return "Data Deleted";
+        print "Data Updated";
        }else{
-        return "Data not Deleted";
-       }
-        return view('Users1',['users'=>$results]);
+        print "Data not Updated";
+       } 
+        return view('Users1',['users'=>$users]);
     }
 }

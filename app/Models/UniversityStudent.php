@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Student extends Model
+class UniversityStudent extends Model
 {
-     public $timestamps = false;
-    protected $table = "students";
+   
+    protected $table = "universitystudents";
 
     function testFun(){
         return "This is DUmmy  Test Function";

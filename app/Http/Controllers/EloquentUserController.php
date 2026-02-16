@@ -7,6 +7,7 @@ use App\Models\EloquentUser;
 class EloquentUserController extends Controller
 {
     //
+    
     function queries(){
         $response= EloquentUser::all();
         return $response;
