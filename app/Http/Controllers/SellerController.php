@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Seller;
+use App\Models\Product;
 
 
 class SellerController extends Controller
@@ -19,6 +20,7 @@ class SellerController extends Controller
     }
 
     function manyToOne(){
-        return "Many to One Function";
+         $data = Product::with('seller')->get();
+        return $data;
     }
 }
